@@ -1,89 +1,49 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { Mail, ArrowUpRight } from 'lucide-react';
 
 export const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    budget: '',
-    message: ''
-  });
+    return (
+        <section id="contact" className="py-20">
+            <div className="bg-[#1c1a19] rounded-[2rem] p-8 lg:p-12 border border-white/5 overflow-hidden relative">
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#c5ff41]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for reaching out! This is a demo submission.');
-  };
+                <div className="relative z-10 flex flex-col md:flex-row gap-12 justify-between items-start">
+                    <div className="max-w-xl">
+                        <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
+                            Let's work <br />
+                            <span className="text-[#998f8f]">together.</span>
+                        </h2>
+                        <p className="text-[#998f8f] text-lg mb-8 leading-relaxed">
+                            I'm currently available for freelance projects and open to full-time opportunities.
+                            If you have a project that needs some creative touch, let's chat.
+                        </p>
 
-  const inputClasses = "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors";
+                        <div className="flex flex-col sm:flex-row gap-4 w-full">
+                            <a href="mailto:imamfajar060@gmail.com" className="flex-1 w-full inline-flex items-center justify-center gap-3 bg-[#c5ff41] text-[#151312] px-8 py-5 rounded-xl font-bold hover:bg-[#b0e63a] transition-colors text-lg">
+                                <Mail size={24} />
+                                Send Email
+                            </a>
+                        </div>
+                    </div>
 
-  return (
-    <section className="space-y-10 py-20">
-      <h2 className="text-6xl font-bold tracking-tighter">
-        <span className="text-white">LET'S WORK</span><br />
-        <span className="text-outline uppercase">Together</span>
-      </h2>
-
-      <form onSubmit={handleSubmit} className="space-y-8 max-w-2xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <label className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Name</label>
-            <input 
-              type="text" 
-              placeholder="Your Name" 
-              required
-              className={inputClasses}
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
-            />
-          </div>
-          <div className="space-y-2">
-            <label className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Email</label>
-            <input 
-              type="email" 
-              placeholder="your@email.com" 
-              required
-              className={inputClasses}
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
-            />
-          </div>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Budget</label>
-          <select 
-            required
-            className={inputClasses}
-            value={formData.budget}
-            onChange={(e) => setFormData({...formData, budget: e.target.value})}
-          >
-            <option value="" className="bg-[#151312]">Select…</option>
-            <option value="<3k" className="bg-[#151312]">&lt;$3k</option>
-            <option value="3k-5k" className="bg-[#151312]">$3k - $5k</option>
-            <option value="5k-10k" className="bg-[#151312]">$5k - $10k</option>
-            <option value=">10k" className="bg-[#151312]">&gt;$10k</option>
-          </select>
-        </div>
-
-        <div className="space-y-2">
-          <label className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Message</label>
-          <textarea 
-            rows={4} 
-            placeholder="Tell me about your project..." 
-            required
-            className={inputClasses}
-            value={formData.message}
-            onChange={(e) => setFormData({...formData, message: e.target.value})}
-          ></textarea>
-        </div>
-
-        <button 
-          type="submit" 
-          className="w-full bg-orange-600 text-white font-bold py-4 rounded-xl hover:bg-orange-500 transition-colors shadow-lg shadow-orange-600/20 active:scale-[0.98]"
-        >
-          Submit
-        </button>
-      </form>
-    </section>
-  );
+                    <div className="flex flex-col gap-6 w-full md:w-auto min-w-[300px]">
+                        <div>
+                            <h3 className="text-sm font-bold text-[#998f8f] uppercase tracking-wider mb-4">Socials</h3>
+                            <div className="flex flex-col gap-3">
+                                <a href="https://www.linkedin.com/in/imamfh/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
+                                    <span className="font-medium">LinkedIn</span>
+                                    <ArrowUpRight size={18} className="text-[#998f8f] group-hover:text-white transition-colors" />
+                                </a>
+                                <a href="https://github.com/imamfha" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
+                                    <span className="font-medium">GitHub</span>
+                                    <ArrowUpRight size={18} className="text-[#998f8f] group-hover:text-white transition-colors" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };

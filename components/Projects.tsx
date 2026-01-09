@@ -13,14 +13,16 @@ export const Projects: React.FC = () => {
 
       <div className="space-y-4">
         {PROJECTS.map((project) => (
-          <a 
-            key={project.id} 
+          <a
+            key={project.id}
             href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-between group p-6 rounded-3xl border border-white/5 transition-colors hover:bg-white/5"
           >
             <div className="flex items-center gap-6">
               <div className="w-32 aspect-square rounded-2xl overflow-hidden bg-gray-800">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-all duration-500" />
               </div>
               <div className="space-y-1">
                 <h3 className="text-2xl font-bold tracking-tight">{project.title}</h3>

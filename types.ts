@@ -20,13 +20,7 @@ export interface Tool {
   name: string;
   category: string;
   icon: string;
-}
-
-export interface BlogArticle {
-  id: string;
-  title: string;
-  summary: string;
-  date: string;
-  readTime: string;
   link: string;
 }
+
+

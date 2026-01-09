@@ -7,48 +7,20 @@ export const Hero: React.FC = () => {
     <section className="space-y-16 py-12">
       <div className="space-y-6">
         <h1 className="text-7xl lg:text-9xl font-bold tracking-tighter leading-[0.9]">
-          <span className="text-white">SOFTWARE</span><br />
-          <span className="text-outline uppercase">Engineer</span>
+          <span className="text-white">COLLEGE</span><br />
+          <span className="text-outline uppercase">STUDENT</span>
         </h1>
         <p className="text-xl text-[#998f8f] max-w-lg leading-relaxed">
-          Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.
+          Enjoying learning new technologies, experimenting with code, and growing through hands-on projects.
         </p>
       </div>
 
       <div className="flex flex-wrap gap-x-16 gap-y-8">
-        <StatItem value="+12" label="YEARS OF" subLabel="EXPERIENCE" />
-        <StatItem value="+46" label="PROJECTS" subLabel="COMPLETED" />
-        <StatItem value="+20" label="WORLDWIDE" subLabel="CLIENTS" />
+        <StatItem value="+1" label="YEAR" subLabel="EXPERIENCE" />
+        <StatItem value="+10" label="PROJECTS" subLabel="COMPLETED" />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <FeatureCard 
-          title="DYNAMIC ANIMATION, MOTION DESIGN" 
-          color="bg-[#f46c38]" 
-          textColor="text-white"
-          icon={<Layers className="w-8 h-8" />}
-          pattern={
-            <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M-50 120 Q 50 80 150 140 T 350 100 T 500 160" stroke="currentColor" strokeWidth="40" fill="none" />
-              <path d="M-50 40 Q 50 0 150 60 T 350 20 T 500 80" stroke="currentColor" strokeWidth="40" fill="none" />
-            </svg>
-          }
-          link="/experience"
-        />
-        <FeatureCard 
-          title="FRAMER, FIGMA, WORDPRESS, REACTJS" 
-          color="bg-[#c5ff41]" 
-          textColor="text-[#151312]"
-          icon={<LayoutGrid className="w-8 h-8" />}
-          pattern={
-            <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M-20 180 L 40 40 L 100 160 L 160 20 L 220 180 L 280 60 L 340 140 L 400 10" stroke="currentColor" strokeWidth="2" fill="none" />
-              <path d="M10 200 L 70 60 L 130 180 L 190 40 L 250 200 L 310 80 L 370 160 L 430 30" stroke="currentColor" strokeWidth="2" fill="none" />
-            </svg>
-          }
-          link="/projects"
-        />
-      </div>
+
     </section>
   );
 };
@@ -67,7 +39,7 @@ const FeatureCard = ({ title, color, textColor, link, icon, pattern }: { title: 
     <div className="absolute inset-0 pointer-events-none">
       {pattern}
     </div>
-    
+
     <div className="relative z-10">
       <div className="mb-4">
         {icon}

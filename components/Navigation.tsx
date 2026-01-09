@@ -1,26 +1,64 @@
 
 import React from 'react';
-import { Home, FolderOpen, Briefcase, Wrench, SquarePen } from 'lucide-react';
-
-const NavItem = ({ icon: Icon, label, active = false }: { icon: any, label: string, active?: boolean }) => (
-  <div className="relative group cursor-pointer flex items-center justify-center p-3 rounded-xl transition-all hover:bg-white/10">
-    <Icon className={`w-6 h-6 transition-colors duration-300 ${active ? 'text-[#f46c38]' : 'text-white'}`} strokeWidth={active ? 2.5 : 2} />
-    <span className="absolute bottom-[-40px] left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 backdrop-blur-sm border border-white/10 px-3 py-1 rounded-md text-[11px] font-medium text-white whitespace-nowrap pointer-events-none z-50">
-      {label}
-    </span>
-  </div>
-);
 
 export const Navigation: React.FC = () => {
-  return (
-    <div className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-max px-4">
-      <nav className="flex items-center gap-2 bg-[#151312]/80 backdrop-blur-xl border border-white/5 px-4 py-2 rounded-[24px] shadow-2xl">
-        <NavItem icon={Home} label="Home" active />
-        <NavItem icon={FolderOpen} label="Projects" />
-        <NavItem icon={Briefcase} label="Experience" />
-        <NavItem icon={Wrench} label="Tools" />
-        <NavItem icon={SquarePen} label="Thoughts" />
-      </nav>
-    </div>
-  );
+    const [activeHash, setActiveHash] = React.useState('');
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const sections = ['projects', 'experience', 'tools', 'contact'];
+            const scrollPosition = window.scrollY + 100; // Offset for sticky header
+
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
+                    setActiveHash(`#${section}`);
+                    return;
+                }
+            }
+
+            if (window.scrollY < 100) {
+                setActiveHash('');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const getLinkClass = (hash: string) => {
+        const isActive = activeHash === hash;
+        return `text-sm font-medium transition-colors ${isActive ? 'text-white' : 'text-[#998f8f] hover:text-white'
+            }`;
+    };
+
+    return (
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-[#151312]/80 backdrop-blur-md border-b border-white/5">
+            <div className="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+                <a href="#" className="text-xl font-bold tracking-tighter" onClick={() => setActiveHash('')}>
+                    PORTO<span className="text-[#c5ff41]">.</span>
+                </a>
+
+                <div className="hidden md:flex items-center gap-8 px-8 py-3 bg-white/5 rounded-full border border-white/5">
+                    <a href="#" className={getLinkClass('')} onClick={() => setActiveHash('')}>Home</a>
+                    <a href="#projects" className={getLinkClass('#projects')}>Projects</a>
+                    <a href="#experience" className={getLinkClass('#experience')}>Experience</a>
+                    <a href="#tools" className={getLinkClass('#tools')}>Tools</a>
+
+                </div>
+
+                <a href="#contact" className="hidden md:flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#c5ff41] transition-colors">
+                    Let's Talk
+                </a>
+
+                {/* Mobile Menu Button */}
+                <button className="md:hidden p-2 text-white">
+                    <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+                    <div className="w-6 h-0.5 bg-white mb-1.5"></div>
+                    <div className="w-6 h-0.5 bg-white"></div>
+                </button>
+            </div>
+        </nav>
+    );
 };
