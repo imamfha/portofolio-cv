@@ -5,7 +5,7 @@ import { TOOLS } from '../constants';
 export const Tools: React.FC = () => {
   return (
     <section className="space-y-10 py-20">
-      <h2 className="text-6xl font-bold tracking-tighter">
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-center md:text-left">
         PREMIUM<br />
         <span className="text-outline uppercase">Tools</span>
       </h2>

@@ -8,8 +8,8 @@ export const Contact: React.FC = () => {
             <div className="bg-[#1c1a19] rounded-[2rem] p-8 lg:p-12 border border-white/5 overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#c5ff41]/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-                <div className="relative z-10 flex flex-col md:flex-row gap-12 justify-between items-start">
-                    <div className="max-w-xl">
+                <div className="relative z-10 flex flex-col md:flex-row gap-12 justify-between items-center md:items-start">
+                    <div className="max-w-xl text-center md:text-left">
                         <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">
                             Let's work <br />
                             <span className="text-[#998f8f]">together.</span>

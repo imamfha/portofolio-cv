@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 export const Projects: React.FC = () => {
   return (
     <section className="space-y-10 py-20">
-      <h2 className="text-6xl font-bold tracking-tighter">
+      <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-center md:text-left">
         RECENT<br />
         <span className="text-outline uppercase">Projects</span>
       </h2>
@@ -18,10 +18,10 @@ export const Projects: React.FC = () => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between group p-6 rounded-3xl border border-white/5 transition-colors hover:bg-white/5"
+            className="flex flex-col md:flex-row items-center md:justify-between group p-6 rounded-3xl border border-white/5 transition-colors hover:bg-white/5 gap-6 md:gap-0"
           >
-            <div className="flex items-center gap-6">
-              <div className="w-32 aspect-square rounded-2xl overflow-hidden bg-gray-800">
+            <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left w-full md:w-auto">
+              <div className="w-full md:w-32 aspect-video md:aspect-square rounded-2xl overflow-hidden bg-gray-800">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-all duration-500" />
               </div>
               <div className="space-y-1">
