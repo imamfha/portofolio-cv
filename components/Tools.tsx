@@ -17,7 +17,7 @@ export const Tools: React.FC = () => {
             href={tool.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all flex items-center gap-4 bg-white/5 group"
+            className="p-6 rounded-2xl border border-white/5 hover:border-white/20 transition-all flex flex-col sm:flex-row items-center gap-4 bg-white/5 group text-center sm:text-left"
           >
             <div className="w-12 h-12 rounded-xl overflow-hidden bg-white/10 p-2 flex items-center justify-center transition-transform group-hover:scale-110">
               <img src={tool.icon} alt={tool.name} className="w-full h-full object-contain" />

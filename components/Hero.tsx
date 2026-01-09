@@ -5,17 +5,17 @@ import { Layers, LayoutGrid, ArrowRight } from 'lucide-react';
 export const Hero: React.FC = () => {
   return (
     <section className="space-y-16 py-12">
-      <div className="space-y-6">
-        <h1 className="text-7xl lg:text-9xl font-bold tracking-tighter leading-[0.9]">
+      <div className="space-y-6 text-center lg:text-left">
+        <h1 className="text-6xl md:text-7xl lg:text-9xl font-bold tracking-tighter leading-[0.9]">
           <span className="text-white">COLLEGE</span><br />
           <span className="text-outline uppercase">STUDENT</span>
         </h1>
-        <p className="text-xl text-[#998f8f] max-w-lg leading-relaxed">
+        <p className="text-xl text-[#998f8f] max-w-lg leading-relaxed mx-auto lg:mx-0">
           Enjoying learning new technologies, experimenting with code, and growing through hands-on projects.
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-x-16 gap-y-8">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-x-16 gap-y-8">
         <StatItem value="+1" label="YEAR" subLabel="EXPERIENCE" />
         <StatItem value="+10" label="PROJECTS" subLabel="COMPLETED" />
       </div>
