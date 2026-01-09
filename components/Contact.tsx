@@ -29,7 +29,7 @@ export const Contact: React.FC = () => {
 
                     <div className="flex flex-col gap-6 w-full md:w-auto min-w-[300px]">
                         <div>
-                            <h3 className="text-sm font-bold text-[#998f8f] uppercase tracking-wider mb-4">Socials</h3>
+                            <h3 className="text-sm font-bold text-[#998f8f] uppercase tracking-wider mb-4 text-center md:text-left">Socials</h3>
                             <div className="flex flex-col gap-3">
                                 <a href="https://www.linkedin.com/in/imamfh/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between group p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors">
                                     <span className="font-medium">LinkedIn</span>
